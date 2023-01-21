@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step form</title>
+    <!-- <link rel="stylesheet" href="s.css"> -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="listingadd.css">
+</head>
+
+<body>
+    <section class="box">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="step">
+                        <form action="" method="post" anctype="multipart/form-data" id="lastChildSubmitBtn"
+                            name="listing_form" onsubmit="return listingData()" class="add_listing-form">
+                            <div class="row form-border">
+                                <div class="col-12">
+                                    <div class="multipart-process">
+                                        <ul class="progress-bar">
+                                            <li class="progress" id="progress"></li>
+
+                                            <li class="progress-item progress-item-active" id="availabilityProgressBar"
+                                                data-title="Availability"></li>
+                                            <li class="progress-item" id="roomProgressBar" data-title="Room Type"></li>
+                                            <li class="progress-item" id="rentalProgressBar" data-title="Rental Type">
+                                            </li>
+                                            <li class="progress-item" id="offeringsProgressBar" data-title="Offerings">
+                                            </li>
+                                            <li class="progress-item" id="cookingProgressBar" data-title="Cooking"></li>
+                                            <li class="progress-item" id="locationProgressBar" data-title="Location">
+                                            </li>
+                                            <li class="progress-item" id="noteProgressBar" data-title="Note"></li>
+                                            <li class="progress-item" id="tenantTypeProgressBar"
+                                                data-title="Tenant Type"></li>
+                                            <li class="progress-item" id="tenantFamilyProgressBar"
+                                                data-title="Tenant Family"></li>
+                                            <li class="progress-item" id="specialProgressBar"
+                                                data-title="Special Requirement"></li>
+                                            <li class="progress-item" id="photosProgressBar" data-title="Photos"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-12 form-step-counter form-step-counter-active"
+                                    id="rentalAvailabilityCounter">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="available-now rental-types">
+                                                <div class="title">
+                                                    <h5>Availability</h5>
+                                                </div>
+                                                <ul class="available-now-on room-type-block list-inline">
+                                                    <li class="list-inline-item">
+                                                        <input type="radio" name="available_now" value="Available Now"
+                                                            id="availableNow" class=" available_now_click">
+                                                        <label for="availableNow" class="available_now_click">Available
+                                                            Now</label>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <input type="radio" name="available_now"
+                                                            value="Rental Available On" id="rentalAvailableOn"
+                                                            class=" available_now_click">
+                                                        <label for="rentalAvailableOn"
+                                                            class="rental-label  available_now_click">Rental Available
+                                                            On</label>
+                                                        <input type="date" name="rentalcalendar" min="" max=""
+                                                            id="rentalAvailableOnCalendar" class=" available_now_click">
+                                                        <label for="rentalAvailableOnCalendar"
+                                                            class="label-calendar available_now_click"
+                                                            id="labelCalendar"></label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="prev-and-next">
+                                                <button type="button" id="rentalAvailabilityId"
+                                                    class="next btn-item load-more">Next</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 form-step-counter" id="roomTypeCounter">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="available-now rental-types">
+                                                <div class="title">
+                                                    <h5>Room Type</h5>
+                                                </div>
+                                                <ul class="rooms-type list-inline room-type-block">
+                                                    <li class="list-inline-item listing-room_room">
+                                                        <input type="radio" name="house_type" id="commonRoom"
+                                                            value="Common Room" class="roomTypeRoom">
+                                                        <label for="commonRoom" class="roomTypeRoom">Common Room</label>
+                                                    </li>
+                                                    <li class="list-inline-item listing-room_room">
+                                                        <input type="radio" name="house_type" id="masterRoom"
+                                                            value="Master Room" class="roomTypeRoom">
+                                                        <label for="masterRoom" class="roomTypeRoom">Master Room</label>
+                                                    </li>
+                                                    <li class="list-inline-item listing-room_room">
+                                                        <input type="radio" name="house_type" id="studio" value="Studio"
+                                                            class="roomTypeRoom">
+                                                        <label for="studio" class="roomTypeRoom">Studio</label>
+                                                    </li>
+                                                    <li class="list-inline-item listing-room_room">
+                                                        <input type="radio" name="house_type" id="entireUnit"
+                                                            value="Entire Unit" class="roomTypeRoom">
+                                                        <label for="entireUnit" class="roomTypeRoom">Entire Unit</label>
+                                                    </li>
+                                                    <li class="list-inline-item listing-room_room">
+                                                        <input type="radio" name="house_type" id="hdb" value="HDB"
+                                                            class="roomTypeRoom">
+                                                        <label for="hdb" class="roomTypeRoom">HDB</label>
+                                                    </li>
+                                                    <li class="list-inline-item listing-room_room">
+                                                        <input type="radio" name="house_type" id="landed" value="Landed"
+                                                            class="roomTypeRoom">
+                                                        <label for="landed" class="roomTypeRoom">Landed</label>
+                                                    </li>
+                                                    <li class="list-inline-item listing-room_room">
+                                                        <input type="radio" name="house_type" id="condo" value="Condo"
+                                                            class="roomTypeRoom">
+                                                        <label for="condo" class="roomTypeRoom">Condo</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="prev-and-next">
+                                                <button type="button" class="prev btn-item load-more"
+                                                    id="roomTypePreviousButton">Previous</button>
+                                                <button type="button" class="next btn-item load-more"
+                                                    id="roomTypeNextButton">Next</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12 form-step-counter" id="locationRentalDetailsCounter">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="location rental-types">
+                                                <div class="title">
+                                                    <h5>Location / Rent Details</h5>
+                                                </div>
+                                                <div class="location-map">
+                                                    <div class="code-rent">
+                                                        <div class="location-code" id="">
+                                                            <label for="post_code">Post Code</label>
+                                                            <input type="text" name="post_code" id="post_code"
+                                                                onInput="showCurrentValue(event)" maxlength="6"
+                                                                placeholder="Postal Code"
+                                                                class="form-control input-user-login form-text "
+                                                                require>
+                                                            <input type="hidden" value="" name="district"
+                                                                id="storeMapLocationValue" />
+                                                        </div>
+                                                        <div class="location-code" id="">
+                                                            <label for="rentPerMonth">Rent per month (SGD)</label>
+                                                            <input type="text" name="rentPerMonth" id="rentPerMonth"
+                                                                onkeyup="showCurrentSdg(event)" placeholder="ex. 1000"
+                                                                class="form-control input-user-login form-text "
+                                                                require>
+                                                        </div>
+                                                    </div>
+                                                    <div class="map">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="prev-and-next">
+                                                <button type="button" class="prev btn-item load-more"
+                                                    id="locationRentalDetailsPrevious">Previous</button>
+                                                <button type="button" class="next btn-item load-more"
+                                                    id="locationRentalDetailsNext">Next</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12 form-step-counter" id="pleaseNoteCounter">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="negotiable rental-types">
+                                                <div class="title">
+                                                    <h5>Please Note</h5>
+                                                </div>
+                                                <div class="yes-no">
+                                                    <div class="negotiable_yes-no">
+                                                        <ul class="list-inline rental-types-list">
+                                                            <li class="list-inline-item">Negotiable</li>
+                                                            <li class="list-inline-item">
+                                                                <input type="radio" name="negotiable" id="negotiableYes"
+                                                                    value="Yes" class="">
+                                                                <label for="negotiableYes" class="">Yes</label>
+                                                            </li>
+                                                            <li class="list-inline-item">
+                                                                <input type="radio" name="negotiable" id="negotiableNo"
+                                                                    value="No" class="">
+                                                                <label for="negotiableNo" class="">No</label>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="negotiable_yes-no" id="">
+                                                        <ul class="list-inline rental-types-list">
+                                                            <li class="list-inline-item">Agent Fees</li>
+                                                            <li class="list-inline-item">
+                                                                <input type="radio" name="agentFee" id="agentFeeYes"
+                                                                    value="Yes" class="agentFee-yes-no">
+                                                                <label for="agentFeeYes"
+                                                                    class="agentFee-yes-no">Yes</label>
+                                                            </li>
+                                                            <li class="list-inline-item">
+                                                                <input type="radio" name="agentFee" id="agentFeeNo"
+                                                                    value="No" class="agentFee-yes-no">
+                                                                <label for="agentFeeNo"
+                                                                    class="agentFee-yes-no">No</label>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="negotiable_yes-no" id="">
+                                                        <ul class="list-inline rental-types-list">
+                                                            <li class="list-inline-item">Pets</li>
+                                                            <li class="list-inline-item">
+                                                                <input type="radio" name="pets" id="petsYes" value="Yes"
+                                                                    class="pet-yes-no">
+                                                                <label for="petsYes" class="pet-yes-no">Yes</label>
+                                                            </li>
+                                                            <li class="list-inline-item">
+                                                                <input type="radio" name="pets" id="petsNo" value="No"
+                                                                    class="pet-yes-no">
+                                                                <label for="petsNo" class="pet-yes-no">No</label>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="negotiable_yes-no" id="">
+                                                        <ul class="list-inline rental-types-list">
+                                                            <li class="list-inline-item">Visitors</li>
+                                                            <li class="list-inline-item">
+                                                                <input type="radio" name="visitors" id="visitorsYes"
+                                                                    value="Yes" class="visitors-yes-no">
+                                                                <label for="visitorsYes"
+                                                                    class="visitors-yes-no">Yes</label>
+                                                            </li>
+                                                            <li class="list-inline-item">
+                                                                <input type="radio" name="visitors" id="visitorsNo"
+                                                                    value="No" class="visitors-yes-no">
+                                                                <label for="visitorsNo"
+                                                                    class="visitors-yes-no">No</label>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="prev-and-next">
+                                                <button type="button" class="prev btn-item load-more"
+                                                    id="pleaseNotePreviousButton">Previous</button>
+                                                <button type="button" class="next btn-item load-more"
+                                                    id="pleaseNoteNextButton">Next</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12 form-step-counter" id="rentalTypeCounter">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="types">
+                                                <div class="rental-types" id="">
+                                                    <div class="title">
+                                                        <h5>Rental Type</h5>
+                                                    </div>
+                                                    <ul class="rental-types-list">
+                                                        <li>
+                                                            <input type="radio" name="no_sharing" id="no_sharing"
+                                                                value="No Sharing" class="rentalTypeSharing">
+                                                            <label for="no_sharing" class="rentalTypeSharing">No
+                                                                Sharing</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="no_sharing" id="room_sharing"
+                                                                value="Room Sharing/Room Mate"
+                                                                class="rentalTypeSharing">
+                                                            <label for="room_sharing" class="rentalTypeSharing">Room
+                                                                Sharing/Room Mate</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="no_sharing" id="sharingWithOwner"
+                                                                value="House Sharing With Owner"
+                                                                class="rentalTypeSharing">
+                                                            <label for="sharingWithOwner"
+                                                                class="rentalTypeSharing">House Sharing With
+                                                                Owner</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="no_sharing" id="worker_dormitory"
+                                                                value="Workers/Dormitory(more than 2 people but less than 6 people)"
+                                                                class="rentalTypeSharing">
+                                                            <label for="worker_dormitory"
+                                                                class="rentalTypeSharing">Workers/Dormitory</label>
+                                                            <p>(more than 2 people but less than 6 people)</p>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="no_sharing"
+                                                                id="worker_dormitory_two"
+                                                                value="Workers/Dormitory(More than 6 people)"
+                                                                class="rentalTypeSharing">
+                                                            <label for="worker_dormitory_two"
+                                                                class="rentalTypeSharing">Workers/Dormitory</label>
+                                                            <p>(More than 6 people)</p>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="no_sharing" id="co_sharing"
+                                                                value="Co-Sharing House Without Owner"
+                                                                class="rentalTypeSharing">
+                                                            <label for="co_sharing" class="rentalTypeSharing">Co-Sharing
+                                                                House Without Owner</label>
+                                                        </li>
+                                                    </ul>
+                                                    <!-- <div class="title">
+                                                        <h5>Please Note</h5>
+                                                    </div>
+                                                    <div class="yes-no padding-less">
+                                                        <div class="negotiable_yes-no" id="">
+                                                            <ul class="list-inline rental-types-list">
+                                                                <li class="list-inline-item">Pets</li>
+                                                                <li class="list-inline-item">
+                                                                    <input type="radio" name="pets" id="petsYes" value="Yes" class="pet-yes-no">
+                                                                    <label for="petsYes" class="pet-yes-no">Yes</label>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <input type="radio" name="pets" id="petsNo" value="No" class="pet-yes-no">
+                                                                    <label for="petsNo" class="pet-yes-no">No</label>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="negotiable_yes-no" id="">
+                                                            <ul class="list-inline rental-types-list">
+                                                                <li class="list-inline-item">Visitors</li>
+                                                                <li class="list-inline-item">
+                                                                    <input type="radio" name="visitors" id="visitorsYes" value="Yes" class="visitors-yes-no">
+                                                                    <label for="visitorsYes" class="visitors-yes-no">Yes</label>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <input type="radio" name="visitors" id="visitorsNo" value="No" class="visitors-yes-no">
+                                                                    <label for="visitorsNo" class="visitors-yes-no">No</label>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="prev-and-next">
+                                                <button type="button" class="prev btn-item load-more"
+                                                    id="rentalTypePreviousButton">Previous</button>
+                                                <button type="button" class="next btn-item load-more"
+                                                    id="rentalTypeNextButton">Next</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12 form-step-counter" id="offeringsCounter">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="types">
+                                                <div class="Offerings" id="">
+                                                    <div class="title" id="">
+                                                        <h5>Offerings</h5>
+                                                    </div>
+                                                    <ul class="Offerings-list">
+                                                        <li>
+                                                            <input type="checkbox" name="furnished[]" id="furnished"
+                                                                value="Furnished" onclick='handleClick(this);'>
+                                                            <label for="furnished">Furnished</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" name="furnished[]" id="unfurnished"
+                                                                value="Unfurnished" onclick="unfurnishedClick(this)">
+                                                            <label for="unfurnished">Unfurnished</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" name="furnished[]"
+                                                                id="partlyFurnished" value="Partly Furnished"
+                                                                onclick="partlyFurnishedClick(this)">
+                                                            <label for="partlyFurnished">Partly Furnished</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" name="furnished[]" id="internet_wifi"
+                                                                value="Internet/Wifi"
+                                                                onclick="internet_wifiClick(this)">
+                                                            <label for="internet_wifi">Internet/Wifi</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" name="furnished[]"
+                                                                id="airconditioning" value="AirCon (Airconditioning)"
+                                                                onclick="airconditioningClick(this)">
+                                                            <label for="airconditioning">AirCon
+                                                                <span>(Airconditioning)</span></label>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="Offerings-list">
+                                                        <li>
+                                                            <input type="checkbox" name="furnished[]"
+                                                                id="noBathroomSharing" value="No Bathroom Sharing"
+                                                                onclick="noSharedBathroomClick(this)">
+                                                            <label for="noBathroomSharing">No Bathroom Sharing</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" name="furnished[]"
+                                                                id="sharedBathroom" value="Shared Bathroom"
+                                                                onclick="sharedBathroomClick(this)">
+                                                            <label for="sharedBathroom">Shared Bathroom</label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="prev-and-next">
+                                                <button type="button" class="prev btn-item load-more"
+                                                    id="offeringPreviousBtn">Previous</button>
+                                                <button type="button" class="next btn-item load-more"
+                                                    id="offeringNextBtn">Next</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12 form-step-counter" id="cookingCounter">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="types">
+                                                <div class="cooking rental-types" id="">
+                                                    <div class="title">
+                                                        <h5>Cooking</h5>
+                                                    </div>
+                                                    <ul class="cooking-allowed rental-types-list">
+                                                        <li>
+                                                            <input type="radio" name="cooking_allowed"
+                                                                id="cooking_allowed" value="Cooking Allowed"
+                                                                class="cookingAllowedOrNotAllowed">
+                                                            <label for="cooking_allowed"
+                                                                class="cookingAllowedOrNotAllowed">Cooking
+                                                                Allowed</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="cooking_allowed"
+                                                                id="light_cooking" value="Light Cooking"
+                                                                class="cookingAllowedOrNotAllowed">
+                                                            <label for="light_cooking"
+                                                                class="cookingAllowedOrNotAllowed">Light Cooking</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="cooking_allowed" id="no_cooking"
+                                                                value="No Cooking" class="cookingAllowedOrNotAllowed">
+                                                            <label for="no_cooking"
+                                                                class="cookingAllowedOrNotAllowed">No Cooking</label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="prev-and-next">
+                                                <button type="button" class="prev btn-item load-more"
+                                                    id="cookingPreviousBtn">Previous</button>
+                                                <button type="button" class="next btn-item load-more"
+                                                    id="cookingNextBtn">Next</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12 form-step-counter" id="lookingForTenantTypeCounter">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="tenant rental-types">
+                                                <div class="title">
+                                                    <h5>Looking for Tenant</h5>
+                                                </div>
+                                                <ul class="list-inline rooms-type room-type-block">
+                                                    <li class="list-inline-item">
+                                                        <input type="radio" name="tenant" id="open" value="Open"
+                                                            class="lookingTenantType">
+                                                        <label for="open" class="lookingTenantType">Open</label>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <input type="radio" name="tenant" id="male" value="Male"
+                                                            class="lookingTenantType">
+                                                        <label for="male" class="lookingTenantType">Male</label>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <input type="radio" name="tenant" id="female" value="Female"
+                                                            class="lookingTenantType">
+                                                        <label for="female" class="lookingTenantType">Female</label>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <input type="radio" name="tenant" id="professional"
+                                                            value="Professional" class="lookingTenantType">
+                                                        <label for="professional"
+                                                            class="lookingTenantType">Professional</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="prev-and-next">
+                                                <button type="button" class="prev btn-item load-more"
+                                                    id="tenantTypePreviousButton">Previous</button>
+                                                <button type="button" class="next btn-item load-more"
+                                                    id="tenantTypeNextButton">Next</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12 form-step-counter" id="lookingForTenantFamilyCounter">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="tenant rental-types">
+                                                <div class="title">
+                                                    <h5>Tenant With/Without Family</h5>
+                                                </div>
+                                                <ul class="list-inline Offerings-list" id="">
+                                                    <li class="list-inline-item">
+                                                        <input type="checkbox" name="single[]" id="single"
+                                                            value="Single" onclick="singleClick(this)">
+                                                        <label for="single">Single</label>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <input type="checkbox" name="single[]" id="couple"
+                                                            value="Couple" onclick="coupleClick(this)">
+                                                        <label for="couple">Couple</label>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <input type="checkbox" name="single[]" id="familyWithKid"
+                                                            value="Family with kid" onclick="familyWithKidClick(this)">
+                                                        <label for="familyWithKid">Family with kid</label>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <input type="checkbox" name="single[]" id="familyWithNoKid"
+                                                            value="Family with no kid"
+                                                            onclick="familyWithNoKidClick(this)">
+                                                        <label for="familyWithNoKid">Family with no kid</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="prev-and-next">
+                                                <button type="button" class="prev btn-item load-more"
+                                                    id="tenantFamilyPreviousButton">Previous</button>
+                                                <button type="button" class="next btn-item load-more"
+                                                    id="tenantFamilyNextButton">Next</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12 form-step-counter" id="anySpecialRequirementCounter">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="special-requirement rental-types">
+                                                <div class="title">
+                                                    <h5>Any Special requirement</h5>
+                                                </div>
+                                                <textarea name="special_requirement" id="special_requirement" rows="5"
+                                                    maxlength="300" class="form-control input-user-login form-message"
+                                                    placeholder="Write a bit more about the place and describe who you are looking for."
+                                                    require></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="prev-and-next">
+                                                <button type="button" class="prev btn-item load-more"
+                                                    id="anySpecialRequirementPreviousBtn">Previous</button>
+                                                <button type="button" class="next btn-item load-more"
+                                                    id="anySpecialRequirementNextBtn">Next</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12 form-step-counter" id="addListingPhotosCounter">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="photos">
+                                                <div class="title">
+                                                    <h5>Photos</h5>
+                                                </div>
+                                                <div class="card card-flex">
+                                                    <div class="card-span">
+                                                        <span class="btn btn-success fileinput-button">
+                                                            <span class="select"><img src="images/file_upload.png"
+                                                                    alt="" class="img-fluid">Select Image</span>
+                                                            <input type="file" name="files[]" id="files" multiple
+                                                                accept="image/jpeg, image/png, image/gif,">
+                                                            <label>Max. 5 photos to add</label>
+                                                        </span>
+                                                        <div class="caption-title text-start">
+                                                            <span>Photos are not mandatory, you can add later.</span>
+                                                        </div>
+                                                    </div>
+                                                    <output id="Filelist"></output>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="text-center">
+                                                <button class="prev btn-item load-more" id="photosPreviousBtn"
+                                                    type="button">Previous</button>
+                                                <input type="submit" name="post_submit" class="load-more btn-item"
+                                                    id="submitAdListingPost" value="POST YOUR AD">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>

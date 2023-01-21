@@ -1,0 +1,125 @@
+/* .available-now-on.room-type-block {
+    border: 1px solid #f2f2f2;
+    padding-left: 25px;
+}
+.available-now-on.room-type-block li {
+    padding: 8px 0px;
+}
+.room-type-block {
+    display: block;
+} */
+.prev-and-next {
+    text-align: right;
+    margin-top: 20px;
+}
+.btn-item {
+    width: unset;
+    padding: 0px 30px;
+    height: 40px;
+    line-height: 40px;
+}
+.available-now-on.room-type-block.list-inline {
+    padding-left: 0px;
+}
+.rooms-type.list-inline.room-type-block {
+    padding-left: 0px;
+}
+.negotiable.rental-types {
+    padding-left: 25px;
+}
+.form-step-counter ul.list-inline.Offerings-list {
+    padding-left: 0px;
+}
+.form-step-counter .whatsapp-interest.rental-types .list-inline.rooms-type {
+    padding-left: 0px;
+}
+.special-requirement.rental-types {
+    padding-right: 25px;
+}
+.yes-no.padding-less {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.yes-no.padding-less > :nth-child(2) {
+    margin-left: 30px;
+}
+.yes-no.padding-less .negotiable_yes-no ul li {
+    color: #303441;
+    font-weight: 400;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.yes-no.padding-less .negotiable_yes-no ul > :first-child {
+    width: 50px;
+}
+/* progress bar css start */
+.multipart-process {
+    margin-bottom: 20px;
+}
+.progress-bar {
+    position: relative;
+    justify-content: space-between;
+    flex-direction: row;
+    counter-reset: step;
+    padding-bottom: 30px;
+}
+.progress-bar::before,
+.progress {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    transform: translateY(-50%);
+    background-color: #43c370;
+    top: 30%;
+    z-index: -1;
+}
+.progress-item {
+    width: 35px;
+    height: 35px;
+    /* background-color: #43c370; */
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.progress-item::before {
+    /* counter-increment: step; */
+    /* content: counter(step); */
+    color: #fff;
+}
+.progress-item::after {
+    /* content: attr(data-title); */
+    position: absolute;
+    top: calc(100% - 1rem);
+    font-size: 14px;
+}
+.progress-item-active {
+    /* background-color: #ea4141; */
+}
+.progress {
+    background-color: #ea4141;
+    width: 0%;
+}
+/* progress bar css end */
+
+.form-step-counter {
+    display: none;
+    transform-origin: top;
+}
+.form-step-counter-active {
+    display: block;
+    animation: animate 0.5s;
+}
+@keyframes animate {
+    from {
+        transform: scale(1, 0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+}
